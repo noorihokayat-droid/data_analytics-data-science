@@ -58,13 +58,7 @@ EXAMPLES:
 COMPARISON
 ==========
 ```
-LAN → Small Area → Home / Office
-
-MAN → City Area → City / Large Campus
-
-WAN → Large Area → Countries / World
-```
-SIMPLE DEFINITION
+ 
 =================
 
 LAN = Local Area Network

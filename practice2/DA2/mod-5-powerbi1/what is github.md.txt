@@ -1,0 +1,38 @@
+What is a Protocol?
+
+A protocol is a set of rules that allows devices, applications, or people to communicate and exchange information in an organized way. It defines how data is formatted, transmitted, received, and understood.
+
+For example, when you open a website, your browser and the web server use protocols to communicate.
+
+Types of Protocols
+
+1. Communication protocols
+	These control the exchange of data between devices.
+	Examples: TCP, UDP, and IP.
+
+2. Internet or web protocols
+	These are used to access websites and transfer web data.
+	Examples: HTTP and HTTPS. HTTPS encrypts the communication for better security.
+
+3. File transfer protocols
+	These are used to upload and download files.
+	Examples: FTP, SFTP, and TFTP.
+
+4. Email protocols
+	These manage sending and receiving email messages.
+	Examples: SMTP for sending email, and POP3 or IMAP for receiving email.
+
+5. Network management protocols
+	These monitor and manage network devices.
+	Examples: SNMP and ICMP. ICMP is used for diagnostic tools such as ping.
+
+6. Security protocols
+	These protect data and verify identity during communication.
+	Examples: TLS, SSL, SSH, and IPsec.
+
+7. Wireless protocols
+	These enable communication without physical cables.
+	Examples: Wi-Fi, Bluetooth, and NFC.
+
+In short, protocols act like a common language and rulebook that enables reliable and secure communication.
+----

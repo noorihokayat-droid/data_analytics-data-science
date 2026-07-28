@@ -2,8 +2,7 @@
 
 1. data is an collection information i.e called data 
 2. data is an collection structured or unstructured types of data
-3. data is also a raw formate i.e called data
-
+3. data is also a raw formate i.e called data.
 
 ## types of data  
 

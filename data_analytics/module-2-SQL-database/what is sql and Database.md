@@ -173,7 +173,7 @@ phone bigint
 
 ```
 alter table tablename add columnname datatype(size)
-```
+or
 alter table employee add country varchar(255);
 or
 alter table employee add state varchar(255);
@@ -185,3 +185,263 @@ or
 alter table employee add unique(`mobile`);
 
 ```
+
+
+
+## drop :
+
+  - drop is used to drop any database & table structure.
+  - drop is delete structures of database & tables.
+  - after drop we never rollback structure & data.
+
+  **syntax**
+
+  ```
+  drop database databasename
+  or 
+  drop database db_app;
+
+  drop table tablename
+  or 
+  drop table employee
+  or
+  drop table users
+
+  ```
+
+## truncate :
+
+  1. truncate is used to delete or remove all data from tables.
+  2. truncate is used to empty all data from tables.
+  3. after  truncate we never rollback data.
+
+  **syntax**
+
+  ```
+  truncate
+  or
+  truncate table employee
+  ```
+
+
+
+
+## rename :
+
+1. rename is used to change any table name.
+
+**syntax**
+
+```
+rename 
+```
+
+
+
+## revised 
+**create a table tbl_reviews with following column name**
+
+```
+tbl_reviews
+
+rid 
+name 
+email
+phone
+raiting
+comment
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## DML : Data manipulation  Language
+
+1. DML is used manipulate data in tables.
+2. DML is used to insert | delete | update data in tables.
+3. DML used for manipulation of data.
+
+**query used in DML**
+
+1. insert
+2. delete
+3. update
+
+
+## HOW to insert data in tables 
+
+**syntax**
+
+```
+insert into tablename(columnname)values('value')
+or
+insert into tbl_employee(name,image,password,gender,hobby,address,mobile,country,state)VALUES('kumar','kumar.jpg','k564588','male','read,playing','rajkot','1234567890','india','gujrat');
+or
+insert into tbl_employee(name,image,password,gender,hobby,address,mobile,country,state)VALUES('deep','kumar.jpg','k564588','male','read,playing','rajkot','1234567890','india','gujrat'),('lokesh','kumar.jpg','k564588','male','read,playing','rajkot','5234567890','india','gujrat'),('priyanka','kumar.jpg','k564588','male','read,playing','rajkot','1534567890','india','gujrat');
+```
+# How can we delete data
+
+1. All data delete from tables
+
+  ```
+  delete from tablename
+  or
+  delete from tbl_employee;
+  ```
+2. delete one rows from table
+
+  
+  ```
+  delete from tablename where 
+  or
+  delete from tbl_employee;
+  ```
+
+
+
+## DQL :
+
+  1. data query language
+  2. DQL is used to select data or fetch data
+
+  ## DQL QUERY :
+
+  1. select
+
+    **fetch data or select data**
+
+    - select all data from 
+
+
+# alias of column name 
+
+  1. alias is a nick name of columns.
+   ```
+
+   ```
+
+
+## SQL function :
+
+  1. SQL provides its inbulit function
+  2. SQL function are 
+
+    - aggrigate function 
+      -sum()
+      -avg()
+      -count()
+      -max()
+      -min()
+    -scalar function
+      -first()
+      -last()
+      -lcase()
+      -ucase()
+      -now()
+      -datetime()
+      -timestamp()
+
+  # sql function query....
+
+    1. 
+
+
+**scaler**
+
+  1. select first(empid)from tbl_employee;
+  2. select last(empid)from tbl_employee;
+  3. select lcase(name)from tbl_employee;
+  4. select ucase(name)from tbl_employee;
+  5. select now(added_date_time) from tbl_employee;
+  6. select datetime(added_date_time) from tbl_employee;
+  7. select timestamp(added_date_time) from tbl_employee;
+
+
+# subquery :
+
+  1. subquery is used query within another query i.e called subquery.
+
+
+
+
+
+
+# SQL Key constraints :
+
+1. SQL key constraints are set a limit on tables.
+2. SQL key constraints are 3 types in SQL 
+
+  - primary key 
+  - unique key
+  - foreign key 
+
+## PRIMARY KEY :-
+
+1. A PRIMARY KEY provides unique data.
+2. A PRIMARY KEY always should be auto_increment with primary key.
+3. A PRIMARY KEY only provides one time in a tables.
+4. A PRIMARY KEY never return null value.
+
+```
+  |  id(PK)  |   name   |  age  |  address  |
+  |----------|----------|-------|-----------|
+  |   1      |    abc   |  27   |   rjt     |
+  |   2      |   xyz    |  22   |   surt    |
+
+
+```
+
+```
+
+  create table tbl_department(
+
+    depid int auto_increment primary key,
+    depname varchar(255)
+  );
+```
+
+
+## unique key :- 
+
+1. A UNIQUE KEY provides unique data ON TABLES.
+2. A UNIQUE KEY anever return a dublicate data.
+3. A UNIQUE KEY provides more than one columns in a tables
+4. A UNIQUE KEY return one time a null value
+
+**tbl_users**
+
+```
+  |  id(PK)  |   name   |  age  |  address  |  phone(uk) |
+  |----------|----------|-------|-----------|------------|
+  |   1      |    abc   |  27   |   rjt     | 9125469871 | 
+  |   2      |    xyz   |  22   |   surt    | 9214569875 |
+
+
+```
+  create table tbl_userd(
+    uid int AUTO_INCREMENT PRIMARY key ,
+    name varchar(255),
+    age int,
+    phone bigint );
+
+    alter TABLE tbl_userd add unique(`phone`);
+
+
+## foregin key :- 
+
+**tbl_faculty**
+
+  create TABLE tbl_faculty (
+    fid int AUTO_INCREMENT primary key,
+    facultyname varchar(255) );

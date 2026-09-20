@@ -445,3 +445,61 @@ insert into tbl_employee(name,image,password,gender,hobby,address,mobile,country
   create TABLE tbl_faculty (
     fid int AUTO_INCREMENT primary key,
     facultyname varchar(255) );
+
+
+## index
+
+**single index**
+
+
+**view**
+```
+  create view tbl_emp_view as select empid,name,mobile from tbl_employee where empid in(1,3,4);
+```
+
+## csv(comma seperated value) file import :-
+
+
+## excel(.)
+
+## case when :
+
+- check a multiple case using case when
+- check a multiple case using case when and also check logic based things there used case when.
+
+```
+select name,salary , case when salary>=100000 then "higher earner" when  salary>=25500 then "medium earner" else "lower earner" end as salary_earner_list from tbl_salesman;
+```
+## round | now function in sql :-
+
+1. round :
+
+- round is used to round a soeci
+
+
+
+# windows function :-
+
+  - windows func. are used to apply calculation & add unique rows in a tables there we use windows func.
+  - windows func. are used to add or set a rows related to the current row without grouping the result into a single row.
+
+**types of windows function**
+
+1. row_number()
+2. rank()
+3. dense_rank()
+4. ntile()
+5. lag()
+6. lead()
+7. first_value()
+8. last_value()
+9. sum() over()
+10. avg() over()
+11. count() over()
+12. max() over()
+13. min over()
+
+**examples of window function** :-
+
+1. row_number() :- assign a unique number to each row 
+

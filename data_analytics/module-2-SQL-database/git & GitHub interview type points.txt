@@ -1,0 +1,83 @@
+***git & GitHub interview type points :-
+-------------------------------------------------------
+
+1. Git :- Git is a version control system used to track changes in code.
+
+2.GitHub :- online platform where we store & manage git repository.
+
+3. Git Vs GitHub :- 
+  >> Git : Works on computer.
+  >> GitHub : store repository online.
+
+4. Repository :- A project storage place containing files , code & git history.
+
+5. Version control :- It help us track , manage & restore changes in a project.
+
+6. mkdir :- create a new folder. 
+
+7. cd :- moves into new folder.
+
+8.cd.. : moves one folder back. 
+
+9.dir : shows files & folders in windows cmd .
+
+10.cls : clear the cmd screen .
+
+11.create a file : type nul > filename
+
+** Git Commands**
+
+git init --- initializes git in project folders.
+
+git status --- shows the current status of files.
+
+git add --- add files to the staging area.
+
+all files --- git add .
+
+git commit -m "message'' 
+
+**GitHub Connection**
+
+12. remote repository :- GitHub repository connected to our local project is called a remote repository.
+
+13. git remote -- shows remote repository information
+
+14. origin -- common default name given to the remote GitHub repo.
+
+**connect GitHub repo :
+
+git remote add origin your_repo_name 
+git push origin main 
+git pull origin main 
+git fetch
+git clone 
+
+**last minute recall**
+
+Git → Version Control
+GitHub → Online Repository
+Repository → Project Storage
+add → Stage
+commit → Save
+push → Upload
+pull → Download + update
+clone → Copy repository
+branch → Separate work
+merge → Combine branches
+PR → Request review/merge
+fork → GitHub copy
+stash → Temporarily save changes
+.gitignore → Ignore files
+
+**commands** :
+
+mkdir MyProject
+cd MyProject
+
+git init
+git add .
+git commit -m "First commit"
+
+git remote add origin YOUR_REPOSITORY_URL
+git push -u origin main

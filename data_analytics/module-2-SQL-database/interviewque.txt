@@ -1,0 +1,190 @@
+					------------------------------------------------------------------------------------------------------------------------------------------------------------		
+			
+												## 	INTERVIEW QUE FROM TOPS	##    
+
+					------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.  What is a database, and why are databases important in data science ? 
+>> database is a collection of tables that is used to store , manage data in data science . 
+>> database are important because they help us to store large amount of data & easily access it for analysis. 
+
+2. What does SQL stand for and what is its main purpose? 
+>> sql stand for Structured Query Language .
+>> sql is used communicate with database and perform many curd operations like select, update ,delete & sorting the data.
+
+3.What is the difference between a table, row, and column? 
+>> A table stored data in a structured fomet .
+>> A row represent one complete record
+>> while column represent a particular attribute or field of the data.
+
+4. What is an RDBMS? Give two examples.
+>>  RDBMS stands for relational database management system . it provide relationship between tables & stores data 
+>> ex : MySQL , PostgreSQL 
+
+5. Give a real-world example where a database is better than Excel.
+>>A bank is a good example. Banks handle millions of customer transactions and many users at the same time.
+>> A database is better because it can handle large data and complex queries efficiently.
+
+6.What are the basic steps to install MySQL or PostgreSQL?
+>>First, download the database software from its official website. Then run the installer, choose the required settings,create a username and password, and complete the installation. Finally, connect to the database and test it .
+
+7. Write an SQL command to create a database called School .
+>> create database school ;
+    .
+8. What is the purpose of a primary key?
+>> A primary key is used to uniquely identify every record in table . it cannot contain duplicate values & cannot be null.
+
+9.Create a Students table with id, name and age.
+>> create table students(
+		id int AUTO_INCREMENT primary key ,
+		name varchar(20) ,
+		age int );
+
+10. What are common SQL data types ?
+>> sql common data types are int , varchar , bigint , text , date , decimal ,Boolean .
+
+11. Insert one student into Students
+>> insert into students(id , name , age ) VALUES (null, 'riya',20);
+
+12. How do you insert multiple rows using one SQL statement?
+>>insert into students(id , name , age ) VALUES (null, 'priya',21),(null,'amit',22),(null,'raj',23);
+
+13. What does UPDATE do and why is WHERE important?
+>> the update statement changes existing records in a table . 
+>> where is important because it specifies which record shuld be updated . without where all records will be updated.
+
+14. Delete all students older than 22 .
+>> delete * from student where age > 22 ;
+
+15. How can you avoid accidentally deleting or updating all records?
+>> always use a proper where clause with update & delete . we should also check the condition using a select query before making changes .  
+
+16. Select all columns from Students.
+>> select * from students ;
+
+17.Select only name and age from students.
+>> select name,age from students ;
+
+18.What is DISTINCT used for?
+>>distinct used for remove duplicate records from result.
+
+19.What is a column alias?
+>> alias gives a temporary & more relatable name to column in the output.
+
+20.What does LIMIT do ? 
+>> restricts the number of row returned by query.
+
+21.Find students whose name starts with A .
+>> select * from students where name like 'a%' ;
+
+22. Difference between IN and BETWEEN?
+>> IN is used to match a value from a list of specific values .
+>> BETWEEN is used to select value in range.
+
+23.Select students aged between 18 and 22.
+>> select  * from students where age between 18 and 22 ;
+
+24.Select students named Amit, Priya or Rahul.
+>> select * from students where name in('amit','riya','rahul');
+
+25. How do you use AND and OR together.
+>>AND means all conditions must be true, while OR means at least one condition should be true. 
+>>Parentheses can be used to clearly control the conditions.
+
+26. What is ORDER BY?
+>>order by is used to sort query in ascending and descending order .
+ 
+27. Order students by age descending.
+>> select * from student order  by age desc ;
+
+28. How do you sort by two columns?
+>>We can mention both columns in ORDER BY. This first sorts by age and then by name .
+
+29. Get the top 5 oldest students.
+>> select * from student order by  age desc limit 5 ;
+
+30. Name three aggregate functions.
+>> avg( ) , count( ) , sum( ) , max( ) , min( )
+
+31.Count total students.
+>> select count(*) as total_students from students;
+
+32. Calculate average age. What happens with NULL?
+>> select avg(age) as avg_age_of_std from students ;
+>> avg() normally ignore null values & calculating the average.
+
+33.Find maximum and minimum age.
+>> select max(age) as maximum_age , min(age) as minium_age from student;
+
+34. What is GROUP BY?
+>>used to group rows that having the same value.
+>> commonly used with aggregate functions like count( ) , avg( ) etc.
+
+35. Count students in each age group.
+>> select age ,count(*) as student_count from students group by age ;
+
+36. Difference between WHERE and HAVING?
+>> where filters individual rows before grouping.
+>> having filters group after group by .
+
+37. Use HAVING to filter groups with more than 2 students .
+>> select age,count(*) as total from students group by age having count(*) > 2 ;
+
+38. Why do we use JOINs?
+>> joins is used to combine data from two or more related tables  , we can join Students with Departments to get department information.
+
+39. Difference between INNER JOIN and LEFT JOIN?
+>> inner join returns only matching data from both tables and left join  returns full data of left table and matching data from right table.
+
+40.Join Students and Departments using department_id.
+>>select s.name , d.department from students s inner join departments d on s.department_id=d.department_id ;
+
+41. What is FULL JOIN?
+>> returns all matching and non-matching records from both tables. it us useful when we want to see all data from both table.
+
+42.What is a SELF JOIN?
+>> when a table is joined with it self . it can be useful for hierarchical data .
+
+43.How do you handle duplicate rows after JOIN?
+>> We can use DISTINCT, proper JOIN conditions, or GROUP BY when appropriate to remove unwanted duplicates.
+
+44. Write a query joining three tables.
+>> SELECT s.name, d.department_name, c.course_name
+FROM Students s
+JOIN Departments d
+ON s.department_id = d.department_id
+JOIN Courses c
+ON s.course_id = c.course_id;
+
+45. What is a subquery?
+>> A subquery is a query written inside another sql query . it can be used inside where , from or select to provide additional data for the main query.
+
+46. Find students older than average age using subquery.
+>> select * from students where age ( select avg(age
+) from students ) ;
+
+47. Difference between subquery and CTE?
+>> A subquery is written inside another query. A CTE, using the WITH clause, creates a temporary named result that makes complex queries easier to read and can be referenced within the statement.
+
+48.  Use CTE to find students older than 20.
+>> WITH OlderStudents AS (
+    SELECT *
+    FROM Students
+    WHERE age > 20)SELECT *
+    FROM OlderStudents;
+
+49. What is a recursive CTE?
+A recursive CTE is a CTE that refers to itself. It is useful for hierarchical or tree-like data, such as employee-manager
+relationships.
+50. What are window functions?
+>> Window functions perform calculations across related rows without combining them into one row. Unlike aggregate
+functions, they keep the individual rows in the result.
+
+51. Use ROW_NUMBER() to rank students by age.
+>> SELECT name, age,
+       ROW_NUMBER() OVER (ORDER BY age DESC) AS rank_no
+FROM Students;
+
+52. What is PARTITION BY?
+>>PARTITION BY divides the rows into groups for a window function. The calculation is then performed separately for
+each group

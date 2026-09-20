@@ -1,4 +1,4 @@
-## <center><h1>ASSESMENT - 1 : SQL BASED </h1></center>
+# <center><h1>ASSESMENT - 1 : SQL BASED </h1></center>
 
 # SCENARIO - 4 : You are managing a food delivery database with three tables: orders (order_id, customer_id, restaurant_id, order_value), restaurants (restaurant_id, name, city,category), and customers (customer_id, name, area). A business team asks for a report showing every restaurant's name and total revenue, including restaurants that have not yet received any orders . 
 

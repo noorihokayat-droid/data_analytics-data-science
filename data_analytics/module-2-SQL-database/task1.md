@@ -43,35 +43,97 @@ insert into country(name)VALUES('rajkot'),('morbi'),('ahemdabad'),('surat'),('go
 ```
 
 6. write a query to select all students along with their country names.
+```
+SELECT s.id,s.name,s.age,s.grade,c.name from students s INNER JOIN country c on s.id=c.id;
+```
+
 7. write a query to find the average age of students in each grade.
+```
+SELECT grade, avg(age) as average_age from students group by grade ;
+```
+
 8. write a query to find the total number of students in each country.
+```
+select country_id,count(name) as total_students from students GROUP BY country_id;
+```
+
 9. write a query to find the student with the highest grade.
+```
+ SELECT name ,grade FROM students ORDER BY grade ASC limit 3;
+```
+
 10. write a query to update the grade of a student with a specific id.
+```
+UPDATE students set grade= 'b' where id=5;
+```
+
 11. write a query to delete a student with a specific id.
+```
+delete from students where id=1;
+```
 
 
 **add to cart based database**
 
 1. create a database named "ecommerce_app"
+```
+create database ecommerce_app ;
+```
 
 2. create a table named "products" with the following columns: 
 
 product_id (primary key), product_name, price, and stock.
+```
+create table products(
+    product_id int auto_increment primary key ,
+    product_name varchar(20),
+    price decimal(10,2),
+    stock bigint 
+);
+```
 
 3. insert at least 5 records into the products table.
+```
+insert into products(product_name,price,stock)values('lipstick',499,500),('mascara',950,400),('compact',500,400),('eyeliner',300,600),('kajal',500,1000);
+```
 
 4. create a table named "customers" with the following columns: 
 
 customer_id (primary key), customer_name, email, and country_id (foreign key referencing the country table).
+```
+create table customers (
+    customer_id int auto_increment primary key,
+    customer_name varchar(30),
+    email varchar(30),
+    country_id int,
+    foreign key (country_id) references country(id)
+)
+```
 
-5. insert at least 3 records into the customers table.   
+5. insert at least 3 records into the customers table.  
+```
+INSERT INTO `customers`(`customer_name`, `email`) VALUES ('ananya','ananya@gmail.com'),('priya','priya@gmail.com'),('riya','riya@gmail.com');
+```
 
 6. create a table named "orders" with the following columns:
 
  order_id (primary key), customer_id (foreign key referencing the customers table), product_id (foreign key referencing the products table), quantity, and order_date.
+ ```
+ create table orders(
+    order_id int AUTO_INCREMENT PRIMARY KEY,
+    customer_id int ,
+    FOREIGN key (customer_id ) REFERENCES customers(customer_id),
+    product_id int,
+    FOREIGN key ( product_id) REFERENCES products( product_id),
+    quantity bigint,
+    order_date timestamp
+);
+```
 
 7. insert at least 5 records into the orders table.   
+```
 
+```
 8. write a query to select all orders along with customer names and product names.
 
 9. write a query to find the total revenue generated from all orders.

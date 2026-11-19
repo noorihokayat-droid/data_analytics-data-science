@@ -63,14 +63,31 @@ print(cube(5))
 #9. Find Maximum: Write a function find_max(a, b, c) that returns the largest among three numbers.
 
 def find_max(a, b, c):
-    return max(a, b, c)
-print(find_max(5, 3, 8))
+    largest = a
 
+    if b > largest:
+        largest = b
+
+    if c > largest:
+        largest = c
+
+    return largest
+
+print("Maximum =", find_max(10, 25, 15))
 #10. Find Minimum: Write a function find_min(a, b, c) that returns the smallest among three numbers.
 
 def find_min(a, b, c):
-    return min(a, b, c)
-print(find_min(5, 3, 8))
+    smallest = a
+
+    if b < smallest:
+        smallest = b
+
+    if c < smallest:
+        smallest = c
+
+    return smallest
+
+print("Minimum =", find_min(10, 25, 15))
 
 #11. Factorial: Write a function factorial(n) that calculates the factorial of a given number.
 
